@@ -23,7 +23,7 @@ const send = async ({
 
   const response = await fetch(finalUrl, {
     method,
-    body: body ? JSON.stringify(body) : undefined,
+    body: body,
     headers: {
       ...header,
       Authorization: sessionId,
