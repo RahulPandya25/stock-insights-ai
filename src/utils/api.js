@@ -1,3 +1,5 @@
+import { v4 as uuid } from "uuid";
+
 const backendApi = import.meta.env.VITE_BACKEND_ENTRYPOINT_API_URL;
 
 const send = async ({
@@ -41,5 +43,9 @@ const send = async ({
 };
 
 export const api = {
-  askAI: (ticker) => send({ method: "POST", queryParams: { ticker } }),
+  askAI: (ticker) =>
+    send({
+      method: "POST",
+      queryParams: { ticker, action: "#AnalyzeStock", threadId: uuid() },
+    }),
 };
