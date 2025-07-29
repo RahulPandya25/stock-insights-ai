@@ -46,6 +46,6 @@ export const api = {
   askAI: (ticker) =>
     send({
       method: "POST",
-      queryParams: { ticker, action: "#AnalyzeStock", threadId: uuid() },
+      body: { ticker, action: `#AnalyzeStock`, threadId: uuid() },
     }),
 };
