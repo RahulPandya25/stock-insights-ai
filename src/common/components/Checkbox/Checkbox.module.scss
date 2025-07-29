@@ -1,0 +1,42 @@
+@import "../../../common";
+
+.checkbox {
+  $currentColor: $accent-blue;
+
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+
+  aspect-ratio: 1;
+  cursor: pointer;
+
+  font: inherit;
+  color: $currentColor;
+
+  border: 0.15em solid $currentColor;
+  border-radius: 0.15em;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+
+    height: 60%;
+    width: 60%;
+
+    background-color: $currentColor;
+    transition: all 0.15s ease-in-out;
+
+    transform-origin: center;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  &:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

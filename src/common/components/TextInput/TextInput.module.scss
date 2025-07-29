@@ -1,0 +1,27 @@
+@import "../../../common";
+
+.input {
+  outline: none;
+  border: 1px solid $color-slate-300;
+  padding: 0.25rem 0.5rem;
+  width: fit-content;
+
+  transition: all 0.15s ease-in-out;
+
+  &.required {
+    border: 1px solid $accent-light-pink;
+  }
+
+  &:not(.required):hover {
+    border-color: $accent-blue;
+  }
+
+  &:not(.required):focus {
+    border-color: $accent-dark-blue;
+  }
+}
+
+.error {
+  color: $accent-pink;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,30 @@
+$color-slate-50: oklch(0.984 0.003 247.858);
+$color-slate-100: oklch(0.968 0.007 247.896);
+$color-slate-200: oklch(0.929 0.013 255.508);
+$color-slate-300: oklch(0.869 0.022 252.894);
+$color-slate-400: oklch(0.704 0.04 256.788);
+$color-slate-500: oklch(0.554 0.046 257.417);
+$color-slate-600: oklch(0.446 0.043 257.281);
+$color-slate-700: oklch(0.372 0.044 257.287);
+$color-slate-800: oklch(0.279 0.041 260.031);
+$color-slate-900: oklch(0.208 0.042 265.755);
+$color-slate-950: oklch(0.129 0.042 264.695);
+
+$white: white;
+$accent-lightest-yellow: oklch(0.987 0.022 95.277);
+$accent-light-yellow: oklch(0.962 0.059 95.617);
+$accent-lightest-blue: #cefafe;
+$accent-light-blue: oklch(0.715 0.143 215.221);
+$accent-blue: #0092b8;
+$accent-dark-blue: oklch(0.52 0.105 223.128);
+$accent-light-pink: oklch(0.712 0.194 13.428);
+$accent-pink: #ec003f;
+$accent-dark-pink: oklch(0.514 0.222 16.935);
+
+$theme-background: $color-slate-100;
+
+$text-color: #6b717f;
+
+$links-color: color-slate-500;
+$links-hover-color: $color-slate-800;
+$links-active-color: $accent-blue;

@@ -1,0 +1,104 @@
+@import "../../../common";
+
+.tableActions {
+  margin-bottom: 1rem;
+}
+.table {
+  border-collapse: collapse;
+  position: relative;
+
+  .loadingMessage {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: progress;
+    background-color: rgba(0, 0, 0, 0.15);
+
+    color: black;
+    font-size: 1.15rem;
+  }
+
+  .caption {
+    padding: 0.5rem;
+    font-style: italic;
+  }
+
+  .tableHeader {
+    color: $color-slate-600;
+    border-bottom: 1px solid $color-slate-300;
+
+    font-size: 1.15rem;
+  }
+
+  .tableBody .tableRow {
+    border-bottom: 1px solid $color-slate-300;
+
+    &:hover {
+      .action {
+        visibility: visible;
+      }
+    }
+
+    &.selected {
+      background-color: $accent-lightest-blue;
+
+      .action {
+        visibility: visible;
+      }
+    }
+
+    &:not(.selected):hover {
+      background-color: $color-slate-200;
+    }
+  }
+
+  .cell {
+    text-align: left;
+    cursor: default;
+
+    padding: 0.5rem;
+
+    &.mutable {
+      cursor: pointer;
+      &:hover {
+        background-color: $color-slate-300;
+      }
+      &.updated {
+        background-color: $accent-lightest-blue;
+      }
+    }
+
+    &.immutable {
+      &:not(.header):not(.newRow) {
+        cursor: not-allowed;
+      }
+      background-color: $accent-lightest-yellow;
+    }
+
+    &.rowActions {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+
+      &.checkboxContainer {
+        justify-content: center;
+      }
+
+      .action {
+        visibility: hidden;
+        margin: 0 0.5rem;
+
+        &.toEnd {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}

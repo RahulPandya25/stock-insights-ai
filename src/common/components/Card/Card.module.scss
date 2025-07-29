@@ -1,0 +1,24 @@
+@import "../../../common";
+
+.card {
+  background-color: $white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  transition: all 0.15s ease-in-out;
+
+  &.raiseOnHover {
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &.clickable {
+    cursor: pointer;
+    &:hover {
+      outline: 1px solid $accent-blue;
+      box-shadow: 0 0 10px rgba($accent-blue, 0.25);
+    }
+  }
+}

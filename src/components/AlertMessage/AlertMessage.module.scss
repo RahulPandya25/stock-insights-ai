@@ -1,0 +1,107 @@
+$alert-types: (
+  info: (
+    color: rgb(59, 130, 246),
+    background: rgb(219, 234, 254),
+  ),
+  success: (
+    color: rgb(16, 185, 129),
+    background: rgb(209, 250, 229),
+  ),
+  warning: (
+    color: rgb(245, 158, 11),
+    background: rgb(254, 243, 199),
+  ),
+  error: (
+    color: rgb(239, 68, 68),
+    background: rgb(254, 226, 226),
+  ),
+);
+
+.container {
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 0.5rem 1rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+
+    gap: 0.6rem;
+
+    cursor: default;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.165);
+
+    animation: entry 0.1s ease-out forwards;
+
+    .icon,
+    .close {
+      font-size: 1.3rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .message {
+      font-weight: 700;
+    }
+
+    .close {
+      font-size: 1.5rem;
+      $size: 2rem;
+
+      height: $size;
+      width: $size;
+
+      color: whitesmoke;
+      border-radius: 50%;
+
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    @each $name, $map in $alert-types {
+      &.#{$name} {
+        $color: map-get($map, color);
+        $background: map-get($map, background);
+
+        background-color: $background;
+        border-color: $color;
+
+        .message,
+        .icon {
+          color: $color;
+        }
+        .close {
+          background-color: $color;
+          &:hover {
+            background-color: darken($color, 20%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes entry {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

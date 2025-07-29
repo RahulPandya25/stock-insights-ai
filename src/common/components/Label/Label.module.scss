@@ -1,0 +1,25 @@
+@import "../../../common";
+
+.label {
+  display: inline-flex;
+  gap: 0.5rem;
+  color: $text-color;
+
+  .key {
+    color: $color-slate-900;
+    font-weight: bold;
+
+    &.required {
+      position: relative;
+      &::after {
+        content: " *";
+        color: $accent-pink;
+      }
+    }
+  }
+
+  &.columnWise {
+    flex-direction: column;
+    gap: 0;
+  }
+}
