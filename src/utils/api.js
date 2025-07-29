@@ -1,6 +1,4 @@
-const backendApi =
-  "https://rahulpandya.app.n8n.cloud/webhook-test/n8n-stock-analysis-webhook";
-// const backendApi = import.meta.env.VITE_BACKEND_ENTRYPOINT_API_URL;
+const backendApi = import.meta.env.VITE_BACKEND_ENTRYPOINT_API_URL;
 
 const send = async ({
   method,

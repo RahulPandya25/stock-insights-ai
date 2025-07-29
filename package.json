@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "local": "VITE_BACKEND_ENTRYPOINT_API_URL=http://127.0.0.1:5000 npm run dev"
+    "local": "VITE_BACKEND_ENTRYPOINT_API_URL=https://rahulpandya.app.n8n.cloud/webhook-test/n8n-stock-analysis-webhook npm run dev"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
