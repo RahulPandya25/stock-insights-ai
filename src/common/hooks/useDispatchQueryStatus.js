@@ -7,8 +7,9 @@ export const useDispatchQueryStatus = (thunkToRun = async () => {}) => {
 
   const queryRunner = async (param) => {
     setIsRunning(true);
-    await dispatch(thunkToRun(param));
+    const data = await dispatch(thunkToRun(param));
     setIsRunning(false);
+    return data;
   };
 
   return [queryRunner, isRunning];

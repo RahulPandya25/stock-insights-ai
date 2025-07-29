@@ -8,9 +8,11 @@ import { Form } from "./common/components/Form/Form";
 import { Card } from "./common/components/Card/Card";
 import { useDispatchQueryStatus } from "./common/hooks/useDispatchQueryStatus";
 import { askAIThunk } from "./store/slices/alertSlice";
+import { useState } from "react";
 
 const App = () => {
   const [queryRunner, isRunning] = useDispatchQueryStatus(askAIThunk);
+  const [insights, setInsights] = useState({});
   return (
     <>
       <AlertMessage />
@@ -21,9 +23,10 @@ const App = () => {
             fields={["Ticker"]}
             requiredFields={["Ticker"]}
             primaryCTA="Get Insights.."
-            onSubmit={(data) => queryRunner(data["Ticker"])}
+            onSubmit={(data) => setInsights(queryRunner(data["Ticker"]))}
           />
           {isRunning && "Loading..."}
+          {insights && <pre>{JSON.stringify(insights, null, 2)}}</pre>}
         </Card>
       </div>
     </>
