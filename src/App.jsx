@@ -23,7 +23,7 @@ const App = () => {
           requiredFields={["Ticker"]}
           primaryCTA="Get Insights.."
           onSubmit={(data) => {
-            queryRunner(data).then((resp) => {
+            queryRunner(data["Ticker"]).then((resp) => {
               if (resp.meta.requestStatus === "fulfilled") {
                 setInsights(resp.payload);
               } else {
